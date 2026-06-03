@@ -49,7 +49,7 @@ $apxu_samosbor_map_block_card_floor $mol_view
 		<= input $apxu_samosbor_map_block_card_number_input
 			enabled <= enabled false
 			value? <=> floor_value? 0
-			- value_string? <=> floor_string? <= floor_value?
+			- value_string? <=> floor_string <= floor_value?
 			- submit? <=> floor_submit? null
 
 $apxu_samosbor_map_block_card_touch $mol_touch
@@ -153,14 +153,14 @@ $apxu_samosbor_map_block_card $mol_view
 		icon <= place_icon* $mol_icon
 		enabled <= edit_mode
 		add_floor? <=> add_place*? null
-		remove_floor* <=> remove_place* null
+		remove_floor*? <=> remove_place*? null
 		block <= block
 	profession_floor* $apxu_samosbor_map_block_card_place
 		floors <= profession_floors* /
 		icon <= place_icon* $mol_icon
 		enabled <= edit_mode
 		add_floor? <=> add_profession*? null
-		remove_floor* <=> remove_floor* null
+		remove_floor*? <=> remove_floor*? null
 		block <= block
 	block_size $mol_view
 		sub /
@@ -339,7 +339,7 @@ $apxu_samosbor_map_block_card $mol_view
 								floors <= safe_floors /
 								icon <= house_icon $apxu_samosbor_map_icon_house
 								enabled false
-								remove_floor* <=> remove_floor* null
+								remove_floor*? <=> remove_floor*? null
 								block <= block
 				^ features_visible / <= features $mol_view
 					sub /
@@ -349,13 +349,13 @@ $apxu_samosbor_map_block_card $mol_view
 						^ transitions / <= Transition*0 $mol_bar
 							sub /
 								<= from_port* $apxu_samosbor_map_block_card_port
-									block_name? <= transition_from_block_name* \
-									floor? <= transition_from_floor* 0
-									pos? <= transition_from_pos* \
+									block_name <= transition_from_block_name* \
+									floor <= transition_from_floor* 0
+									pos <= transition_from_pos* \
 								<= to_port* $apxu_samosbor_map_block_card_port
-									block_name? <= transition_to_block_name* \
-									floor? <= transition_to_floor* 0
-									pos? <= transition_to_pos* \
+									block_name <= transition_to_block_name* \
+									floor <= transition_to_floor* 0
+									pos <= transition_to_pos* \
 								<= remove_transition_button* $mol_button_minor
 									sub / <= remove_transition_icon* $mol_icon_close
 									click? <=> remove_transition*? null

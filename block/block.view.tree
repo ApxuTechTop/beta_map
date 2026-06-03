@@ -211,7 +211,7 @@ $apxu_samosbor_map_block $mol_view
 							sub / <= block_name
 						<= up_left_angle_visible <= up_left_angle_part $apxu_samosbor_map_block_part
 						<= up_left_passage $apxu_samosbor_map_block_passage
-							type? <= passage_type*up_left \noway
+							type <= passage_type*up_left \noway
 							event *
 								click? <=> passage_click*up_left? null
 							up true
