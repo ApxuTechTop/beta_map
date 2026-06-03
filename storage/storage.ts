@@ -14,7 +14,7 @@ namespace $ {
 		}
 		@$mol_mem
 		static active_map( next?: number ) {
-			return next ?? 0
+			return next ?? 2
 		}
 		@$mol_mem
 		static current() {
